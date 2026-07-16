@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promed Constructora | Experiencia e Innovación</title>
+    <meta name="description" content="Especialistas en construcción, obra singular y rehabilitación de edificios desde 2003.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        granate: {
+                            DEFAULT: '#8A1538', // Elegante tono granate
+                            dark: '#610F27',
+                            light: '#A7244B'
+                        },
+                        gris: {
+                            light: '#F3F4F6',
+                            medium: '#9CA3AF',
+                            dark: '#374151',
+                            xdark: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos personalizados adicionales */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(31, 41, 55, 0.7), rgba(138, 21, 56, 0.6)), url('https://images.unsplash.com/photo-1541888082425-cefa1c24cd35?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-bottom-color: #8A1538;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
+
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-granate text-white flex items-center justify-center rounded font-bold text-xl group-hover:bg-granate-light transition-colors">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <div class="flex flex-col leading-tight">
+                    <span class="font-bold text-xl tracking-wider text-white" id="logo-text-1">PROMED</span>
+                    <span class="text-xs font-semibold tracking-widest text-gray-300" id="logo-text-2">CONSTRUCTORA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-white hover:text-granate-light font-semibold transition-colors nav-link">Inicio</a>
+                <a href="#nosotros" class="text-white hover:text-granate-light font-semibold transition-colors nav-link">Nosotros</a>
+                <a href="#servicios" class="text-white hover:text-granate-light font-semibold transition-colors nav-link">Servicios</a>
+                <a href="#imasd" class="text-white hover:text-granate-light font-semibold transition-colors nav-link">I+D</a>
+                <a href="#contacto" class="text-white hover:text-granate-light font-semibold transition-colors nav-link">Contacto</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 flex-col px-6">
+            <a href="#inicio" class="block py-2 text-gray-800 font-semibold hover:text-granate">Inicio</a>
+            <a href="#nosotros" class="block py-2 text-gray-800 font-semibold hover:text-granate">Nosotros</a>
+            <a href="#servicios" class="block py-2 text-gray-800 font-semibold hover:text-granate">Servicios</a>
+            <a href="#imasd" class="block py-2 text-gray-800 font-semibold hover:text-granate">I+D</a>
+            <a href="#contacto" class="block py-2 text-gray-800 font-semibold hover:text-granate">Contacto</a>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero-bg h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-6 text-center reveal active">
+            <span class="inline-block py-1 px-3 rounded-full bg-granate/80 text-white text-sm font-semibold tracking-wider mb-6 backdrop-blur-sm border border-granate-light">
+                DESDE 2003
+            </span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
+                Construimos hoy <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-granate-light">el patrimonio del mañana</span>
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto mb-10 drop-shadow">
+                Unimos la juventud de nuestro equipo con la experiencia de más de dos décadas para ofrecer soluciones innovadoras en todo tipo de construcciones y obras singulares.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#servicios" class="px-8 py-4 bg-granate text-white rounded font-bold hover:bg-granate-dark transition-all shadow-lg shadow-granate/30">
+                    Nuestros Servicios
+                </a>
+                <a href="#contacto" class="px-8 py-4 bg-white text-gray-900 rounded font-bold hover:bg-gray-100 transition-all border border-gray-200 shadow-lg">
+                    Contactar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="py-24 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal relative">
+                    <!-- Decoración fondo -->
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-granate/10 rounded-full z-0"></div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gray-200 rounded-full z-0"></div>
+                    
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Edificio moderno construido por Promed" class="rounded-lg shadow-2xl relative z-10 w-full h-[500px] object-cover">
+                    
+                    <!-- Tarjeta flotante -->
+                    <div class="absolute -bottom-10 right-10 bg-white p-6 rounded-lg shadow-xl z-20 border-t-4 border-granate">
+                        <div class="text-4xl font-bold text-granate mb-1">+20</div>
+                        <div class="text-gray-600 font-semibold text-sm">Años de <br>Experiencia</div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 reveal">
+                    <h4 class="text-granate font-bold uppercase tracking-widest text-sm mb-2">Quiénes Somos</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Excelencia técnica y artística con identidad propia</h2>
+                    <p class="text-gray-600 mb-6 text-lg">
+                        En <strong class="text-gray-900">Promed Constructora</strong> somos especialistas en construcción, obra singular y rehabilitación de edificios. Nacidos en 2003, hemos consolidado nuestro liderazgo en el sector basándonos en la calidad, el cumplimiento de plazos y la satisfacción del cliente.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        Nos encargamos de construir tu hogar exclusivo, de calidad y sin preocupaciones. Desde el diseño inicial hasta la ejecución completa del proyecto, incluyendo el interiorismo y paisajismo, garantizando un servicio de 360 grados.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-granate/10 flex items-center justify-center text-granate">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Equipo técnico altamente cualificado.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-granate/10 flex items-center justify-center text-granate">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Cumplimiento estricto de normativas y plazos.</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-granate/10 flex items-center justify-center text-granate">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-gray-700 font-medium">Materiales innovadores y sostenibles.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 bg-gray-100">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-granate font-bold uppercase tracking-widest text-sm mb-2">Nuestras Especialidades</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Soluciones integrales para cada proyecto</h2>
+                <div class="w-24 h-1 bg-granate mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Obra Nueva -->
+                <div class="service-card reveal bg-white p-8 rounded-xl shadow-md border-b-4 border-transparent transition-all duration-300">
+                    <div class="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center text-3xl text-granate mb-6 shadow-inner">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Viviendas y Obra Nueva</h3>
+                    <p class="text-gray-600 mb-4">Ejecución de edificios de nueva construcción, chalets, unifamiliares, locales comerciales, naves industriales y centros comerciales.</p>
+                </div>
+
+                <!-- Rehabilitación -->
+                <div class="service-card reveal bg-white p-8 rounded-xl shadow-md border-b-4 border-transparent transition-all duration-300" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center text-3xl text-granate mb-6 shadow-inner">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Rehabilitación</h3>
+                    <p class="text-gray-600 mb-4">Mantenimiento de fachadas, impermeabilización de terrazas, cubiertas y reforma integral de viviendas dándoles una identidad propia.</p>
+                </div>
+
+                <!-- Obra Civil -->
+                <div class="service-card reveal bg-white p-8 rounded-xl shadow-md border-b-4 border-transparent transition-all duration-300" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center text-3xl text-granate mb-6 shadow-inner">
+                        <i class="fa-solid fa-road"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Infraestructuras y Obra Civil</h3>
+                    <p class="text-gray-600 mb-4">Instalaciones deportivas, parques infantiles, urbanización de calles, eliminación de barreras arquitectónicas y carril bici.</p>
+                </div>
+
+                <!-- Hoteles y Obra Singular -->
+                <div class="service-card reveal bg-white p-8 rounded-xl shadow-md border-b-4 border-transparent transition-all duration-300">
+                    <div class="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center text-3xl text-granate mb-6 shadow-inner">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Hoteles y Obra Singular</h3>
+                    <p class="text-gray-600 mb-4">Servicios integrales para proyectos hoteleros, desde su concepción hasta la apertura. Planteamiento 360º en hospitales y clínicas.</p>
+                </div>
+
+                <!-- Área de Negocio -->
+                <div class="service-card reveal bg-white p-8 rounded-xl shadow-md border-b-4 border-transparent transition-all duration-300" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-gray-50 rounded-lg flex items-center justify-center text-3xl text-granate mb-6 shadow-inner">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Área de Negocio</h3>
+                    <p class="text-gray-600 mb-4">Servicios continuos para empresas y administraciones públicas. Mantenimiento de edificios e infraestructuras con la máxima eficiencia.</p>
+                </div>
+                
+                <!-- CTA Banner -->
+                <div class="reveal bg-granate rounded-xl shadow-md p-8 flex flex-col justify-center items-center text-center text-white" style="transition-delay: 200ms;">
+                    <h3 class="text-2xl font-bold mb-4">¿Tienes un proyecto en mente?</h3>
+                    <p class="mb-6 opacity-90 text-sm">Hagamos realidad tus ideas con la garantía y profesionalidad que mereces.</p>
+                    <a href="#contacto" class="px-6 py-3 bg-white text-granate font-bold rounded hover:bg-gray-100 transition-colors shadow-lg">Solicitar Presupuesto</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="imasd" class="py-24 bg-gris-xdark text-white relative overflow-hidden">
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-granate/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gray-700/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <div class="lg:w-1/2 reveal">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-granate/30 border border-granate/50 rounded-full text-granate-light font-semibold text-sm mb-6">
+                        <i class="fa-solid fa-lightbulb"></i> Sección Nueva
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">I+D: Construyendo el Futuro Sostenible</h2>
+                    <p class="text-gray-300 mb-6 text-lg">
+                        En Promed Constructora no solo edificamos el presente, investigamos y desarrollamos el futuro de la construcción. Nuestra área de <strong class="text-white">Investigación y Desarrollo</strong> está enfocada en la eficiencia energética, la digitalización de procesos y el uso de materiales eco-inteligentes.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-granate/50 transition-colors">
+                            <i class="fa-solid fa-cubes text-granate text-2xl mb-3"></i>
+                            <h4 class="text-lg font-bold mb-2">Metodología BIM</h4>
+                            <p class="text-gray-400 text-sm">Modelado de información de construcción para prever errores, reducir costes y optimizar el ciclo de vida del edificio.</p>
+                        </div>
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-granate/50 transition-colors">
+                            <i class="fa-solid fa-leaf text-granate text-2xl mb-3"></i>
+                            <h4 class="text-lg font-bold mb-2">Materiales Sostenibles</h4>
+                            <p class="text-gray-400 text-sm">Investigación activa en aislamientos térmicos avanzados y hormigones de baja huella de carbono.</p>
+                        </div>
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-granate/50 transition-colors">
+                            <i class="fa-solid fa-microchip text-granate text-2xl mb-3"></i>
+                            <h4 class="text-lg font-bold mb-2">Domótica Integrada</h4>
+                            <p class="text-gray-400 text-sm">Hogares e infraestructuras inteligentes (IoT) para un control total del consumo energético y la seguridad.</p>
+                        </div>
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-granate/50 transition-colors">
+                            <i class="fa-solid fa-recycle text-granate text-2xl mb-3"></i>
+                            <h4 class="text-lg font-bold mb-2">Economía Circular</h4>
+                            <p class="text-gray-400 text-sm">Gestión inteligente de residuos de obra y reutilización de recursos para un impacto ambiental cero.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 reveal">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Investigación y Desarrollo en construcción" class="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="bg-black/60 backdrop-blur-md p-4 rounded text-sm border-l-4 border-granate">
+                                "La innovación tecnológica es el pilar central de nuestras edificaciones más recientes, garantizando certificaciones energéticas A+ y un máximo confort."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <h4 class="text-granate font-bold uppercase tracking-widest text-sm mb-2">Hablemos</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¿Preparado para empezar tu obra?</h2>
+                <div class="w-24 h-1 bg-granate mx-auto rounded"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 reveal">
+                
+                <!-- Info Column -->
+                <div class="lg:w-2/5 bg-gris-xdark p-10 text-white relative">
+                    <!-- Textura fondo -->
+                    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
+                        <p class="text-gray-400 mb-10">Rellena el formulario o ponte en contacto con nosotros directamente a través de los siguientes canales.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-granate/20 flex items-center justify-center text-granate-light flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold mb-1">Dirección</h5>
+                                    <p class="text-gray-300 text-sm leading-relaxed">Carrer Felipe Antón 30, 2º piso<br>03110 Mutxamel, Alicante</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-granate/20 flex items-center justify-center text-granate-light flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold mb-1">Teléfono</h5>
+                                    <p class="text-gray-300 text-sm">965 95 30 73</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-granate/20 flex items-center justify-center text-granate-light flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold mb-1">Email</h5>
+                                    <p class="text-gray-300 text-sm">info@promedconstructora.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-granate/20 flex items-center justify-center text-granate-light flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold mb-1">Horario</h5>
+                                    <p class="text-gray-300 text-sm">L-J: 9:00 – 14:00 / 16:00 – 19:00 h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:w-3/5 p-10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h3>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+                                <input type="text" id="nombre" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-granate focus:border-granate outline-none transition-all bg-gray-50">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-granate focus:border-granate outline-none transition-all bg-gray-50">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="asunto" class="block text-sm font-medium text-gray-700 mb-2">Asunto / Servicio de interés</label>
+                            <select id="asunto" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-granate focus:border-granate outline-none transition-all bg-gray-50 text-gray-700">
+                                <option value="">Selecciona una opción</option>
+                                <option value="obra_nueva">Viviendas y Obra Nueva</option>
+                                <option value="rehabilitacion">Rehabilitación</option>
+                                <option value="obra_civil">Infraestructuras y Obra Civil</option>
+                                <option value="hoteles">Hoteles y Obra Singular</option>
+                                <option value="mantenimiento">Área de Negocio / Mantenimiento</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Tu mensaje</label>
+                            <textarea id="mensaje" rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-granate focus:border-granate outline-none transition-all bg-gray-50 resize-none"></textarea>
+                        </div>
+                        
+                        <!-- Mensaje de éxito oculto -->
+                        <div id="formSuccess" class="hidden mb-6 p-4 bg-green-100 text-green-700 rounded-lg flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i> Mensaje enviado correctamente. Nos pondremos en contacto pronto.
+                        </div>
+
+                        <button type="submit" class="w-full bg-granate text-white font-bold py-4 px-6 rounded-lg hover:bg-granate-dark transition-all flex justify-center items-center gap-2">
+                            <span>Enviar Mensaje</span>
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <!-- Columna 1 -->
+                <div>
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-granate text-white flex items-center justify-center rounded font-bold text-lg">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <div class="flex flex-col leading-tight">
+                            <span class="font-bold text-lg tracking-wider">PROMED</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        PROMED CONSULTING, S.L.U.<br>
+                        Ofrecemos soluciones innovadoras y profesionales en todo tipo de construcciones con un enfoque de 360 grados en intervención y sostenibilidad.
+                    </p>
+                    <!-- Redes Sociales (Ejemplo) -->
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-granate transition-colors text-sm"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-granate transition-colors text-sm"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-granate transition-colors text-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-gray-200">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-granate transition-colors text-sm">Inicio</a></li>
+                        <li><a href="#nosotros" class="text-gray-400 hover:text-granate transition-colors text-sm">Quiénes Somos</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-granate transition-colors text-sm">Servicios</a></li>
+                        <li><a href="#imasd" class="text-gray-400 hover:text-granate transition-colors text-sm">Innovación e I+D</a></li>
+                        <li><a href="#contacto" class="text-gray-400 hover:text-granate transition-colors text-sm">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-gray-200">Legal</h4>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400 text-sm">N.I.F.: B-53826087</li>
+                        <li><a href="#" class="text-gray-400 hover:text-granate transition-colors text-sm">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-granate transition-colors text-sm">Aviso Legal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-granate transition-colors text-sm">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; <span id="currentYear"></span> Promed Consulting S.L.U. Todos los derechos reservados.</p>
+                <p class="mt-2 md:mt-0">Diseño web modernizado para vista local</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Actualizar el año en el footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Lógica de la barra de navegación (cambio de fondo al hacer scroll)
+        const navbar = document.getElementById('navbar');
+        const logoText1 = document.getElementById('logo-text-1');
+        const logoText2 = document.getElementById('logo-text-2');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'py-2');
+                navbar.classList.remove('bg-transparent', 'py-4');
+                logoText1.classList.remove('text-white');
+                logoText1.classList.add('text-gray-900');
+                logoText2.classList.remove('text-gray-300');
+                logoText2.classList.add('text-gray-500');
+                mobileBtn.classList.remove('text-white');
+                mobileBtn.classList.add('text-gray-900');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-gray-800');
+                });
+            } else {
+                navbar.classList.remove('glass-nav', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+                logoText1.classList.add('text-white');
+                logoText1.classList.remove('text-gray-900');
+                logoText2.classList.add('text-gray-300');
+                logoText2.classList.remove('text-gray-500');
+                mobileBtn.classList.add('text-white');
+                mobileBtn.classList.remove('text-gray-900');
+
+                navLinks.forEach(link => {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-gray-800');
+                });
+            }
+        });
+
+        // Menú móvil
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Cerrar menú móvil al hacer click en un enlace
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Animación de aparición (Scroll Reveal)
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+
+            revealElements.forEach((el) => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Llamada inicial por si elementos ya están en vista
+        revealOnScroll();
+
+        // Manejo del formulario para evitar alertas (UI limpia)
+        function handleFormSubmit(e) {
+            e.preventDefault(); // Evitar envío real
+            
+            const form = document.getElementById('contactForm');
+            const successMsg = document.getElementById('formSuccess');
+            const btn = form.querySelector('button[type="submit"]');
+            
+            // Simular estado de carga
+            const originalBtnHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
+            btn.disabled = true;
+            btn.classList.add('opacity-75');
+
+            setTimeout(() => {
+                // Mostrar mensaje de éxito
+                successMsg.classList.remove('hidden');
+                form.reset();
+                
+                // Restaurar botón
+                btn.innerHTML = originalBtnHtml;
+                btn.disabled = false;
+                btn.classList.remove('opacity-75');
+
+                // Ocultar mensaje de éxito después de 5 segundos
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
